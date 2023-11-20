@@ -1,29 +1,29 @@
-<html>
-  <head>
-    <script
-      type="module"
-      src="https://cdn.skypack.dev/webcomponent-markdown"
-    ></script>
-    <script src="test.js"></script>
-      
-  </head>
-  <body>
-    <h1>This is a test </h1>
+---
+layout: default
+---
 
-    <form>
-      <input type="text">
-      <input type="button">
-    </form>
+<script
+  type="module"
+  src="https://cdn.skypack.dev/webcomponent-markdown"
+></script>
+<script src="test.js"></script>
 
-    Then here comes a interesting component that can handle markdown 
-    <remark-markdown>
-      <script slot="content" type="text/markdown">
-        # Hello world
-    
-        This is an example of an embedded Markdown document, rendered using Remark!
-      </script>
-    </remark-markdown>
+<h1>This is a test </h1>
 
-  </body>
-</html>
+<form>
+  <input type="text">
+  <input type="button">
+</form>
+
+Then here comes a interesting component that can handle markdown 
+<remark-markdown>
+  <script slot="content" type="text/markdown">
+    # Hello world
+
+    This is an example of an embedded Markdown document, rendered using Remark!
+  </script>
+</remark-markdown>
+
+
+
 
