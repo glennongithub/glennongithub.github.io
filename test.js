@@ -12,7 +12,7 @@ import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@3.1.0/
         return css`.mood { color: green; }`;
       }
       render() {
-        return html`Web Components are <span class="mood">${this.mood}</span>!`;
+        return html`Web Components are super <span class="mood">${this.mood}</span>!`;
       }
     }
     customElements.define('my-element', MyElement);
