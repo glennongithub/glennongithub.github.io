@@ -1,34 +1,12 @@
 <html>
   <head>
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@latest/webcomponents-loader.js"></script>
-    <script src="test.js"></script>
-      
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/myLitElement.js"></script>  
   </head>
   <body>
-    <script type="module">
-    import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@3.1.0/all/lit-all.min.js';
     
-    class MyElement extends LitElement {
-
-      static get properties() {
-        return {
-          mood: {type: String}
-        }
-      }
-      
-      static get styles() {
-        return css`.mood { color: green; }`;
-      }
-
-      render() {
-        return html`Web Components are <span class="mood">${this.mood}</span>!`;
-      }
-    }
-
-    customElements.define('my-element', MyElement);
-  </script>
-  
-  <my-element mood="great"></my-element>
+    <my-element mood="great"></my-element>
 
   </body>
 </html>
