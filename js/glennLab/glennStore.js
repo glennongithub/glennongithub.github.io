@@ -1,6 +1,5 @@
+// We may export more version further down so lets se named exports
 export function writable(value) {
-    console.log('it is working');
-
     // We do not need to declare any new var for value it already exist as it is a incoming param
 
     const subscribers = new Set();
@@ -28,5 +27,6 @@ export function writable(value) {
         subscribers.forEach((subscriber) => subscriber(value))
     }
 
+    // The object with the function(s) we like to export on the instance we creates
     return { set, update, subscribe }
 }
