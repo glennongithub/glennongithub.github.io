@@ -3,24 +3,32 @@
  * Svelte version as it is just better and more fleshed out. But for now, to keep clear what is actually happening
  * I will use my own version
  * 
- * @param {T} value 
- * @returns {
- *      subscibe: ((value: T) => viod) => () => void,
- *      update: ((value: T) => T) => void,
- *      set: ({T}) => void,
- * }
+ *
+ * @typedef {(carrier: T) => void} SubscriberFunc
+ * @typedef {(carrier: T) => T} UpdateFunc
+ * @typedef {{
+ *      subscribe: (subscriberFunc: SubscriberFunc<T>) => () => void, 
+ *      update: (updateFunc: UpdateFunc<T>) => void, 
+ *      set: ({T}) => void
+ *  }} Writable
+ * 
+ * @template T
+ * @param {T} value initial value
+ * @returns { Writable<T>}
  */
-// We may export more version further down so lets use named exports
 export function writable(value) {
     // We do not need to declare any new var for value it already exist as it is a incoming param
-
     const subscribers = new Set();
 
     /**
-     * @param (value: T) => void 
-     * @returns () => void
+     * @param {SubscriberFunc<T>} subscriberFunc
+     * @returns {() => void}
      */
     function subscribe(subscriberFunc) {
+        // Make sure we sync the subscriber with current valure directly
+        subscriberFunc(/** @type {T} */ (value));
+        
+        // And ofc add it to subscribers-list so it is updated when needed.
         subscribers.add(subscriberFunc);
 
         // return cleanup function
@@ -31,12 +39,12 @@ export function writable(value) {
 
     /**
      * 
-     * @param (value: T) => T updateFunc
+     * @param {UpdateFunc<T>} updateFunc
      * @returns {void}
      */
     function update(updateFunc) {
         // Update value acording to modification requested in updateFunc
-        value = updateFunc(value);
+        value = updateFunc(/** @type {T} */ (value));
         // make sure all subscribers are notified
         subscribers.forEach((subscriber) => subscriber(value));
     }
