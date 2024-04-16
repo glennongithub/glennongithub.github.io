@@ -1,3 +1,4 @@
+// @ts-check
 /**
  * This is a experimental store mostly used to learn the concept. Likely it will in later stages be replaced by the
  * Svelte version as it is just better and more fleshed out. But for now, to keep clear what is actually happening
@@ -9,7 +10,7 @@
  * @typedef {{
  *      subscribe: (subscriberFunc: SubscriberFunc<T>) => () => void, 
  *      update: (updateFunc: UpdateFunc<T>) => void, 
- *      set: ({T}) => void
+ *      set: (newValue: T) => void
  *  }} Writable
  * 
  * @template T
