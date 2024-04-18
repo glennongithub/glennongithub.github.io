@@ -5,7 +5,7 @@ import { writable } from "./glennLab/glennStore.js";
 //import { writable } from "./glennStoreWithoutJsDoc.js";
 
 // The type of initial values should be respected thoughout the existance of the store.
-// types via jsdoc makes sure vs code can keep track of that and show warnings if we are not.
+// types via jsdoc makes sure vscode can keep track of that and show warnings if we are not.
 const firstStore = writable(123);
 const secondStore = writable('');
 console.log('App is starting');
