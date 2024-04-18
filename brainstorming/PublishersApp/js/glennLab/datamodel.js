@@ -30,6 +30,13 @@
  * const MINISTERIAL_SEVANT = 6;
  * const ELDER = 7;
  * 
+ * Some things to describe.
+ * Minimum level of spiritual status for special asignments/responsibility
+ * For instace
+ * Auxiliary pioneer - minimum GOOD_STANDING
+ * Pioneer - EXEMPLARY
+ * Cart wittnesing - BAPTISED + See Special requirements in Sfl.
+ * 
  * SpiritualStatus
  * @typedef {0|1|2|3|4|5|6|7} SpiritualStatus
  * @typedef {'heaven'|'earth'} FutureHope
