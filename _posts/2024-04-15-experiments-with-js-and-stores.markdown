@@ -15,7 +15,7 @@ https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html#template
 The svelte source-code that now uses jsdoc in .js files instead of typescript. 
 https://github.com/sveltejs/svelte/tree/main/packages/svelte/src/store
 
-I do not fullyinderstand how and why the still rely on .d.ts files though. Which i do not thingk will work in pure js projects. 
+I do not fully understand how and why the still rely on .d.ts files though. Which i do not think will work in pure js projects. 
 But I ight need to verify/research that. 
 I have so far managed to not use d.ts files but intesad proper @typedefs instead.
 
