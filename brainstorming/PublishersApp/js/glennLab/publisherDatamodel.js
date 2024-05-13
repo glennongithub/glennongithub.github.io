@@ -20,16 +20,16 @@
  *
  * Spiritual status
  * increasing level where a level can only be reached by first fullfil all previous levels
- * 
- * const INTERESTED = 0;
- * const PUBLISHER = 1;
- * const BAPTISED = 2;
- * const GOOD_STANDING = 3;
- * const EXEMPLARY = 4;
- * const ASSIGNED_SPECIAL_RESPONSIBILLITY = 5;
- * const MINISTERIAL_SEVANT = 6;
- * const ELDER = 7;
- * 
+ */ 
+const INTERESTED = 0;
+const PUBLISHER = 1;
+const BAPTISED = 2;
+const GOOD_STANDING = 3;
+const EXEMPLARY = 4;
+const ASSIGNED_SPECIAL_RESPONSIBILLITY = 5;
+const MINISTERIAL_SEVANT = 6;
+const ELDER = 7;
+ /** 
  * Some things to describe.
  * Minimum level of spiritual status for special asignments/responsibility
  * For instace
@@ -37,9 +37,23 @@
  * Pioneer - EXEMPLARY
  * Cart wittnesing - BAPTISED + See Special requirements in Sfl.
  * 
+ * We probably ned a table/model for being able to create roles/responsibillities/assignments
+ * 
  * SpiritualStatus
- * @typedef {0|1|2|3|4|5|6|7} SpiritualStatus
+ * @typedef {INTERESTED|PUBLISHER|2|3|4|5|6|7} SpiritualStatus
  * @typedef {'heaven'|'earth'} FutureHope
+ * 
+ * 
+ * Publishers can belong to one or many groups. Groups belong to a groupType making it possible to assign a publisher 
+ * to multiple groups in a meningful way
+ * 
+ * Group
+ * @typedef {{
+ *  id: string,
+ *  groupName: string,
+ *  groupType: string,
+ * }} Group
+ * 
  * 
  * Publisher 
  * @typedef {{ 
@@ -49,18 +63,9 @@
  *  homeAddress: AddressLocation,
  *  futureHope: FutureHope,
  *  spiritualStatus: SpiritualStatus,
+ *  groupIds: [string]|[],
  * }} Publisher
  * */
-
-const INTERESTED = 0;
-const PUBLISHER = 1;
-const BAPTISED = 2;
-const GOOD_STANDING = 3;
-const EXEMPLARY = 4;
-const ASSIGNED_SPECIAL_RESPONSIBILLITY = 5;
-const MINISTERIAL_SEVANT = 6;
-const ELDER = 7;
-
 
 /**
  * @type Publisher
@@ -81,4 +86,5 @@ const publisher = {
     },
     futureHope: 'earth',
     spiritualStatus: ELDER,
+    groupIds: [],
 };
