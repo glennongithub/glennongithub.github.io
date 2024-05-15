@@ -2,10 +2,55 @@
 layout: default
 title: Small area calculator tool
 ---
-<!-- Works only on browsers that support Javascript modules like
-       Chrome, Safari, Firefox 60, Edge 17 -->
-<script type="module" src="js/myLitElement.js"></script>  
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('form');
+        const sideA = form.querySelector("[name='side-a']");
+        const sideB = form.querySelector("[name='side-b']");
+        const sideC = form.querySelector("[name='side-c']");
+
+        form.onsubmit = (event) => {
+            event.preventDefault();
+            // get all values
+            sideAvalue = parseFloat(sideA.value);
+            sideBvalue = parseFloat(sideB.value);
+            sideCvalue = parseFloat(sideC.value);
+            // calculate the semi-perimeter
+            const s = (sideAvalue + sideBvalue + sideCvalue) /2
+            //calculate the area
+            const areaValue = Math.sqrt(
+                s * (s - sideAvalue) * (s - sideBvalue) * (s - sideCvalue)
+            );
+            console.dir(areaValue);
+            if(isNaN(areaValue)) {
+                alert("The length of given sides cannot be used to form a triangle. At lest one of the sides are to short!")
+            } else {
+                alert(areaValue.toFixed(2));
+            }
+            
+        };
+    });
+    
+    
+
+</script>
+<form>
+    <label>Side A in meters</label>
+    <input type="number" step="0.01" name="side-a"></br>
+
+    <label>Side B in meters</label>
+    <input type="number" step="0.01" name="side-b"></br>
+    
+    <label>Side C in meters</label>
+    <input type="number" step="0.01" name="side-c"></br>
+
+    <button type="submit">Calculate</button>
+    <br><br>
+</form>
 <my-element mood="great"></my-element>
+
+
 <p>
     This tool is based on the idea that all areas need to be divided into triagles.
 </p>
@@ -21,12 +66,7 @@ title: Small area calculator tool
     Imagine a component where you have some standard way of give the length of each of the side in a triangle and
     it spits out the area.
 </p>
-<form>
-    <label>Side A</label><input type="number" name="side-a">
-    <label>Side B</label><input type="number" name="side-b">
-    <label>Side C</label><input type="number" name="side-c">
-    <button type="submit">Calculate</button>
-</form>
+
 
     
 
