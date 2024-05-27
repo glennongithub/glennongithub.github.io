@@ -53,5 +53,5 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - brainstorming/compiled/svelte/firstSvelteTest/node_modules/
+  - brainstorming/compiled/svelte/firstSvelteKitTest/node_modules/
 
