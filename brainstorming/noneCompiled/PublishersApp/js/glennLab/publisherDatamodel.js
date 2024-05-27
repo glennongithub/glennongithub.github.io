@@ -38,6 +38,7 @@ const ELDER = 7;
  * Cart wittnesing - BAPTISED + See Special requirements in Sfl.
  * 
  * We probably ned a table/model for being able to create roles/responsibillities/assignments
+ * Mixing const with actual int below jsut as a test. Do not know if there are any consequenses of const vs dirrect value
  * 
  * SpiritualStatus
  * @typedef {INTERESTED|PUBLISHER|2|3|4|5|6|7} SpiritualStatus
@@ -67,6 +68,53 @@ const ELDER = 7;
  * }} Publisher
  * */
 
+ 
+ /**
+  * @type Group
+  */
+const fieldServiceGroup1 = {
+    id: '1',
+    groupName: 'Group 1',
+    groupType: 'fieldservice'
+ };
+
+/**
+  * @type Group
+  */
+const fieldServiceGroup2 = {
+    id: '2',
+    groupName: 'Group 2',
+    groupType: 'fieldservice'
+ };
+
+ /**
+  * @type Group
+  */
+const fieldServiceGroup3 = {
+    id: '3',
+    groupName: 'Group 3',
+    groupType: 'fieldservice'
+ };
+
+ /**
+  * @type Group
+  */
+const fieldServiceGroup4 = {
+    id: '4',
+    groupName: 'Group 4',
+    groupType: 'fieldservice'
+ };
+
+ /**
+  * @type Group
+  */
+const fieldServiceGroup5 = {
+    id: '5',
+    groupName: 'Group 5',
+    groupType: 'fieldservice'
+ };
+
+
 /**
  * @type Publisher
  */
@@ -86,5 +134,5 @@ const publisher = {
     },
     futureHope: 'earth',
     spiritualStatus: ELDER,
-    groupIds: [],
+    groupIds: ['1'],
 };
