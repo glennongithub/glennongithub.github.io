@@ -55,5 +55,6 @@ exclude:
   - vendor/ruby/
   - brainstorming/compiled/svelte/firstSvelteKitTest/node_modules/
   - brainstorming/compiled/
+  - non-included-on-site/
 
 # Exludes all in compiled during experiments for now.. 
